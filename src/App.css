@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 30vh;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 4em;
+  font-family: BebasNeueBold;
+}
+
+.App-intro {
+  font-size: large;
+  font-size: 2em;
+  font-family: 'BebasNeue', Fallback, sans-serif;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@font-face {
+  font-family: BebasNeue;
+  src: url("https://d1fsi47in3678q.cloudfront.net/fonts/BebasNeue-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: BebasNeueBold;
+  src: url("https://d1fsi47in3678q.cloudfront.net/fonts/BebasNeue-Bold.otf");
+  font-style: normal;
+  font-weight: 700;
+}
