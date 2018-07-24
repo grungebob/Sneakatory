@@ -45,6 +45,19 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: proxima-nova;
+  src: url("https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), url("https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+.shoe {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
@@ -60,7 +73,42 @@ th, td {
 }
 
 table#table1 {
-  width:70%; 
-  margin-left:15%; 
-  margin-right:15%;
+  width:90%; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #509e2f;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.shoe-info {
+  font-family: 'proxima-nova', Fallback, sans-serif;
+  color: white;
+  font-size: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
