@@ -4,7 +4,7 @@ import ShelfRow from './ShelfRow.js';
 
 const Shelf = (props) => (
   <table id="table1">
-    <thead>  
+    <tbody>  
         <tr>
             <th></th>
             <th>Column 1</th>
@@ -13,11 +13,8 @@ const Shelf = (props) => (
             <th>Column 4</th>
             <th>Column 5</th>
         </tr>
-    </thead>
-
-     { props.shelf1.map((row) => <ShelfRow key={row.row} row={row}/> )}
-    {/* < ShelfRow /> */}
-
+        { props.shelf1.map((row) => <ShelfRow key={row.row} row={row}/> )}
+    </tbody>
   </table>
 )
 
