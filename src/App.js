@@ -7,7 +7,10 @@ import data from './dummy_data.js';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = data;
+    this.state = {
+      data: data,
+      view: 'Shelf 1'
+    }
   }
 
   render() {
@@ -20,7 +23,10 @@ class App extends Component {
         <p className="App-intro">
           Hover over the shelf slot to view data. <br/> Click on the slot to update.
         </p>
-        <Shelf shelf1={this.state.shelf1}/>
+        <p className="App-intro"> 
+          {this.state.view}
+        </p>
+        <Shelf shelf1={this.state.data.shelf1}/>
       </div>
     );
   };
