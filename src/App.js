@@ -7,29 +7,83 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      shelf1: {
-        row1: {
-          column1: {
-            title: "AJ1",
-            size: 12,
-            UPC: '18373'
+      shelf1:
+        [
+          { 
+            row: 2,
+            shoes: [
+              {
+                brand: 'Nike',
+                style: "AJ1",
+                size: 12,
+                UPC: 18373,
+              },
+              { 
+                brand: 'Adidas',
+                style: "Yeezy VO2",
+                size: 12,
+                UPC: 36837,
+              },
+              {
+                brand: 'Nike',
+                style: "AJ1",
+                size: 11,
+                UPC: 18373,
+              },
+              {
+                brand: 'Nike',
+                style: "RF Greedy",
+                size: 11,
+                UPC: 382737,
+                
+              },
+              {
+                brand: 'Nike',
+                style: "LBJ South Beach",
+                size: 11.5,
+                UPC: 373826,
+              },
+            ],
           },
-          column2: {
-            title: "Yeezy VO2"
-          },
-          column3: {
-            title: "AirMax 97/1"
-          },
-          column4: {
-            title: "RF Greedy"
-          },
-          column5: {
-            title: "LBJ South Beach"
+          {
+            row: 1,
+            shoes: [
+              {
+                brand: 'Vans',
+                style: "ATCQ",
+                size: 12,
+                UPC: 38367,
+              },
+              { 
+                brand: 'Converse',
+                style: 'Chucks Off-White',
+                size: 11,
+                UPC: 372345,
+              },
+              {
+                brand: 'Diadora',
+                style: "Gugas",
+                size: 12,
+                UPC: 332243,
+              },
+              {
+                brand: 'Nike',
+                style: "Vapor AJ3",
+                size: 11,
+                UPC: 382737,
+                
+              },
+              {
+                brand: 'Adidas',
+                style: "Yeezy Boost 750",
+                size: 11.5,
+                UPC: 453678,
+              },
+            ],
           }
-        },
+        ],
       }
     }
-  }
 
   render() {
     return (
@@ -41,10 +95,10 @@ class App extends Component {
         <p className="App-intro">
           To view a slot's data, hover over the shelf slot. <br/> To update the data, click on the slot.
         </p>
-        <Shelf />
+        <Shelf shelf1={this.state.shelf1}/>
       </div>
     );
-  }
+  };
 }
 
 export default App;

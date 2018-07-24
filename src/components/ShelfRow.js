@@ -1,13 +1,11 @@
 import React from 'react';
+import Shoe from './Shoe.js';
+
 
 const ShelfRow = (props) => (
   <tr>
-    <td>Row 1</td>
-    <td>AJ1</td>
-    <td>Yeezy VO2</td>
-    <td>AirMax 97/1</td>
-    <td>AJ3 Black Cement</td>
-    <td>RF Greedy</td>
+    <td>Row {props.row.row}</td>
+    { props.row.shoes.map((shoe) => <Shoe shoe={shoe}/> )}
   </tr>
 )
 export default ShelfRow;
