@@ -13,7 +13,7 @@ const Shelf = (props) => (
             <th>Column 4</th>
             <th>Column 5</th>
         </tr>
-        { props.shelf1.map((row) => <ShelfRow key={row.row} row={row}/> )}
+        { props.shelf1.map((row) => <ShelfRow key={row.row} row={row} handleClick={props.handleClick}/> )}
     </tbody>
   </table>
 )
