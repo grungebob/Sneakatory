@@ -10,21 +10,21 @@ https://stockx-inventory.herokuapp.com/
 ## Running locally
 *To run this application locally, you can clone this repository to the folder of you choice: 
 ```
-git clone https://github.com/grungebob/Sneakatory
+*git clone https://github.com/grungebob/Sneakatory
 ```
-*cd into the Sneakatory directory
+Enter the Sneakatory directory:
 ```
 cd Sneakatory
 ```
-*Install the Node dependencies:
+Install the Node dependencies:
 ```
 npm i
 ```
-*Start the application
+Start the application
 ```
 npm start 
 ```
-*The application should open your browser automatically. If it does not, open your browser and visit:
+The application should open your browser automatically. If it does not, open your browser and visit:
 ```
 localhost:3000
 ```
