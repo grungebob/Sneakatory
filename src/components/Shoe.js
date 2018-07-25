@@ -9,7 +9,6 @@ class Shoe extends React.Component {
             showModal: false,
             isEditing: false,
             editShoe: {
-                id: '',
                 brand: '',
                 style: '',
                 size: '',
@@ -70,8 +69,7 @@ class Shoe extends React.Component {
                     <td className = "container" onClick={this.openModal} id="myBtn">
                         <img src={this.state.shoe.imgLink} alt="Shoe" className="shoe"/>
                         <div className = "overlay">
-                            <div className = "shoe-info">
-                                ID: { this.state.shoe.id } <br />  
+                            <div className = "shoe-info">  
                                 Brand: { this.state.shoe.brand } <br />
                                 Style: { this.state.shoe.style } <br />
                                 Size: { this.state.shoe.size } <br />
@@ -91,7 +89,6 @@ class Shoe extends React.Component {
                 >
                     <span className="close" onClick={this.closeModal}>&times;</span>
                     <div className = "modal-content">
-                        ID: { this.state.shoe.id } <br />  
                         Brand: { this.state.shoe.brand } <br />
                         Style: { this.state.shoe.style } <br />
                         Size: { this.state.shoe.size } <br />
