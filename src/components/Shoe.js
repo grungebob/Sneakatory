@@ -58,7 +58,8 @@ class Shoe extends React.Component {
 
       updateShoe() {
           this.setState({
-              shoe: this.state.editShoe
+              shoe: this.state.editShoe,
+              showModal: false,
           })
       }
 
@@ -110,7 +111,7 @@ class Shoe extends React.Component {
                 >
                     <span className="close" onClick={this.closeModal}>&times;</span>
                     <form className = "modal-edit">
-                        <input type="text" name="brand"  onChange={this.handleChange} placeholder="Brand (e.g. adidas, Nike, etc.)" />
+                        <input type="text" name="brand" onChange={this.handleChange} placeholder="Brand (e.g. adidas, Nike, etc.)" />
                         <input type="text" name="style" onChange={this.handleChange} placeholder="Style (e.g. AR5131-610)" />
                         <input type="text" name="size"  onChange={this.handleChange} placeholder="Size (e.g. 7, 10, ... you get it)" />
                         <input type="text" name="UPC"  onChange={this.handleChange} placeholder="UPC #" />
