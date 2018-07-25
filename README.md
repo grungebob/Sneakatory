@@ -8,9 +8,9 @@ https://stockx-inventory.herokuapp.com/
 
 ---
 ## Running locally
-*To run this application locally, you can clone this repository to the folder of you choice: 
+To run this application locally, you can clone this repository to the folder of you choice: 
 ```
-*git clone https://github.com/grungebob/Sneakatory
+git clone https://github.com/grungebob/Sneakatory
 ```
 Enter the Sneakatory directory:
 ```
