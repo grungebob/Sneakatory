@@ -17,6 +17,7 @@ class App extends Component {
     this.setState({
       view: option
     });
+    console.log(this.state.view);
   }
 
   render() {
@@ -29,7 +30,11 @@ class App extends Component {
         <p className="App-intro">
           Hover over the shelf slot to view data. <br/> Click on the slot to update.
         </p>
-        <Shelf shelf1={this.state.data[this.state.view]} handleClick={this.handleClick}/>
+        <ul>
+          <li className={this.state.view === 'shelf1' ? 'active' : 'inactive'} onClick={() => this.changeView('shelf1')}> Shelf 1 </li> 
+          <li className={this.state.view === 'shelf2' ? 'active' : 'inactive'} onClick={() => this.changeView('shelf2')}> Shelf 2 </li> 
+        </ul>
+        <Shelf shelf={this.state.data[this.state.view]} handleClick={this.handleClick}/>
       </div>
     );
   };

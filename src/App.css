@@ -208,3 +208,21 @@ input[type=text] {
   background-color: #5cb85c;
   color: white;
 }
+
+ul li {
+  display:inline;
+}
+
+.active{
+  color: #5cb85c;
+  font-size: 2em;
+  font-family: 'BebasNeue', Fallback, sans-serif;
+  margin: 2em 2em 2em 2em;
+}
+
+.inactive{
+  color: #000000;
+  font-size: 2em;
+  font-family: 'BebasNeue', Fallback, sans-serif;
+  margin: 2em 2em 2em 2em;
+}
