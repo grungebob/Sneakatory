@@ -9,21 +9,14 @@ class App extends Component {
     super(props);
     this.state = {
       data: data,
-      view: 'Shelf 1'
+      view: 'shelf1'
     }
-    this.handleClick = this.handleClick.bind(this);
   }
 
   changeView(option) {
     this.setState({
       view: option
     });
-  }
-
-  handleClick(e) {
-    console.log('Click Registered', e);
-    console.log('this \n', this);
-
   }
 
   render() {
@@ -36,10 +29,7 @@ class App extends Component {
         <p className="App-intro">
           Hover over the shelf slot to view data. <br/> Click on the slot to update.
         </p>
-        <p className="App-intro"> 
-          {this.state.view}
-        </p>
-        <Shelf shelf1={this.state.data.shelf1} handleClick={this.handleClick}/>
+        <Shelf shelf1={this.state.data[this.state.view]} handleClick={this.handleClick}/>
       </div>
     );
   };
