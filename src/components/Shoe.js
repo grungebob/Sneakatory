@@ -14,7 +14,7 @@ class Shoe extends React.Component {
                 size: '',
                 UPC: '',
                 imgLink: ''
-            }
+            },
         };
         this.closeModal = this.closeModal.bind(this);
         this.openModal = this.openModal.bind(this);
@@ -43,7 +43,6 @@ class Shoe extends React.Component {
       }
 
       deleteShoe(){
-          console.log('Delete Shoe');
           this.setState({
               shoe: 'Empty Slot'
           });

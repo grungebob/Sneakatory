@@ -17,7 +17,6 @@ class App extends Component {
     this.setState({
       view: option
     });
-    console.log(this.state.view);
   }
 
   render() {
