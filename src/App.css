@@ -97,7 +97,7 @@ table#table1 {
 }
 
 .container:hover .overlay {
-  opacity: 1;
+  opacity: .9;
 }
 
 .shoe-info {
@@ -134,7 +134,7 @@ Background */
 .modal-content {
   position: relative;
   background-color: #fefefe;
-  margin: auto;
+  margin: 50%, 50%, 50%, 50%;
   padding: 0;
   border: 1px solid #888;
   width: 80%;
@@ -158,7 +158,7 @@ Background */
 
 /* The Close Button */
 .close {
-  color: white;
+  color: black;
   float: right;
   font-size: 28px;
   font-weight: bold;

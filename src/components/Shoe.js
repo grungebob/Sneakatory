@@ -3,14 +3,14 @@ import Modal from 'react-modal';
 
 const customStyles = {
     content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)',
-        width: '85%',
-        height: '85%',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        width: '30%',
+        height: '40%',
       }
   };
 
@@ -20,67 +20,72 @@ class Shoe extends React.Component {
         this.state = {
             shoe: props.shoe,
             showModal: false,
-            dude: false,
+            isEditing: false,
         };
-
-        this.handleOpenModal = this.handleOpenModal.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.openModal = this.openModal.bind(this);
+        this.edit = this.editShoe.bind(this);
+        this.deleteShoe = this.deleteShoe.bind(this);
       };
 
-
-      handleOpenModal () {
-        this.setState({ showModal: true });
-      }
-      
-      handleCloseModal () {
-        console.log('close');
-        this.setState({ showModal: false });
-        console.log('handle cm', this.state.showModal)
-      }
-
       openModal() {
-        this.setState({dude: true});
+        this.setState({ showModal: true});
       }
      
-      async closeModal() {
-        await this.setState({ dude: false});
-        console.log('close modal', this.state.dude)
+      closeModal() {
+        this.setState({ showModal: false});
       }
-  
+      
+      editShoe() {
+          this.setState({ editModal: true });
+          console.log(this.state.editModal);
+      }
+
+      deleteShoe(){
+          console.log('Delete Shoe');
+          this.setState({
+              shoe: 'Empty Slot'
+          });
+          this.closeModal();
+      }
 
       render() {
         return (
-            <td className = "container" onClick={this.openModal} id="myBtn">
-                <img src={this.state.shoe.imgLink} alt="Shoe" className="shoe"/>
-                <div className = "overlay">
-                    <div className = "shoe-info">
-                        ID: { this.state.shoe.id } <br />  
-                        Brand: { this.state.shoe.brand } <br />
-                        Style: { this.state.shoe.style } <br />
-                        Size: { this.state.shoe.size } <br />
-                        UPC: { this.state.shoe.UPC } <br />
-                    </div>
+            !this.state.showModal ?
+                this.state.shoe !== 'Empty Slot' ?
+                    <td className = "container" onClick={this.openModal} id="myBtn">
+                        <img src={this.state.shoe.imgLink} alt="Shoe" className="shoe"/>
+                        <div className = "overlay">
+                            <div className = "shoe-info">
+                                ID: { this.state.shoe.id } <br />  
+                                Brand: { this.state.shoe.brand } <br />
+                                Style: { this.state.shoe.style } <br />
+                                Size: { this.state.shoe.size } <br />
+                                UPC: { this.state.shoe.UPC } <br />
+                            </div>
+                        </div>     
+                    </td>
+                :
+                <td onClick ={this.edit}> Open Slot </td>
+            :
+            <Modal
+            isOpen={this.state.showModal}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            ariaHideApp={false}
+            >
+                <span className="close" onClick={this.closeModal}>&times;</span>
+                <div className = "modal-content">
+                    ID: { this.state.shoe.id } <br />  
+                    Brand: { this.state.shoe.brand } <br />
+                    Style: { this.state.shoe.style } <br />
+                    Size: { this.state.shoe.size } <br />
+                    UPC: { this.state.shoe.UPC } <br />
+                    Image: { this.state.shoe.imgLink } 
                 </div>
-
-                <Modal
-                    isOpen={this.state.dude}
-                    onAfterOpen={this.afterOpenModal}
-                    onRequestClose={this.closeModal}
-                    style={customStyles}
-                >
-                        <span className="close" onClick={this.closeModal}>&times;</span>
-                        <div>
-                            ID: { this.state.shoe.id } <br />  
-                            Brand: { this.state.shoe.brand } <br />
-                            Style: { this.state.shoe.style } <br />
-                            Size: { this.state.shoe.size } <br />
-                            UPC: { this.state.shoe.UPC } <br />
-                        </div>
-                    <button onClick={this.closeModal}>Close Modal</button>
-                </Modal>
-            </td>
+                <button onClick={this.edit}> EDIT </button>
+                <button onClick={this.deleteShoe}> REMOVE </button>
+            </Modal>
         )
     }
 }
