@@ -1,19 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-const customStyles = {
-    content : {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        width: '60%',
-        height: '60%',
-      }
-  };
-
 class Shoe extends React.Component {
     constructor(props) {
         super(props);
@@ -21,6 +8,14 @@ class Shoe extends React.Component {
             shoe: props.shoe,
             showModal: false,
             isEditing: false,
+            editShoe: {
+                id: '',
+                brand: '',
+                style: '',
+                size: '',
+                UPC: '',
+                imgLink: ''
+            }
         };
         this.closeModal = this.closeModal.bind(this);
         this.openModal = this.openModal.bind(this);
@@ -28,7 +23,6 @@ class Shoe extends React.Component {
         this.deleteShoe = this.deleteShoe.bind(this);
         this.updateShoe = this.updateShoe.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
       };
 
       openModal() {
@@ -47,7 +41,6 @@ class Shoe extends React.Component {
               showModal: true, 
               isEditing: true 
             });
-          console.log('is editing?', this.state.isEditing);
       }
 
       deleteShoe(){
@@ -59,22 +52,13 @@ class Shoe extends React.Component {
       }
 
       handleChange(event) {
-        this.setState({value: event.target.value});
-      }
-    
-      handleSubmit(event) {
-        event.preventDefault();
+        let newEdit = this.state.editShoe;
+        newEdit[event.target.name] = event.target.value;
       }
 
-      updateShoe(newBrand, newStyle, newSize, newUPC, newImgLink) {
+      updateShoe() {
           this.setState({
-              shoe: {
-                  brand: newBrand,
-                  style: newStyle,
-                  size: newSize,
-                  UPC: newUPC,
-                  imgLink: newImgLink
-              }
+              shoe: this.state.editShoe
           })
       }
 
@@ -114,7 +98,7 @@ class Shoe extends React.Component {
                         Image Link: { this.state.shoe.imgLink } 
                     </div>
                     <div onClick={this.edit} className="shoe-button" >EDIT</div>
-                    <div onClick={this.deleteShoe} className="shoe-button" >REMOVE</div>
+                    <div onClick={this.deleteShoe} className="shoe-button remove" >REMOVE</div>
                 </Modal>
             :
             <Modal
@@ -125,17 +109,32 @@ class Shoe extends React.Component {
                 align-content="center"
                 >
                     <span className="close" onClick={this.closeModal}>&times;</span>
-                    <form className = "modal-edit" onSubmit = {this.updateShoe}>
-                        <input type="text" name="brand" placeholder="Brand (e.g. adidas, Nike, etc.)" />
-                        <input type="text" name="style" placeholder="Style (e.g. AR5131-610)" />
-                        <input type="text" name="size" placeholder="Size (7, 10, you get it)" />
-                        <input type="text" name="UPC" placeholder="UPC #" />
-                        <input type="text" name="image" placeholder="Image Link (e.g. https://stockx.imgix.net/shoe-name.png)" /> <br />
-                        <input type="submit" value="Submit" className="shoe-button" />
-                        <div onClick={this.deleteShoe} className="shoe-button">REMOVE</div>
+                    <form className = "modal-edit">
+                        <input type="text" name="brand"  onChange={this.handleChange} placeholder="Brand (e.g. adidas, Nike, etc.)" />
+                        <input type="text" name="style" onChange={this.handleChange} placeholder="Style (e.g. AR5131-610)" />
+                        <input type="text" name="size"  onChange={this.handleChange} placeholder="Size (e.g. 7, 10, ... you get it)" />
+                        <input type="text" name="UPC"  onChange={this.handleChange} placeholder="UPC #" />
+                        <input type="text" name="imgLink"  onChange={this.handleChange} placeholder="Image URL (e.g. https://stockx.imgix.net/shoe-name.png)" /> <br />
+                        <div type="submit" value="Submit" className="shoe-button" onClick= {this.updateShoe}>SAVE</div>
+                        <div onClick={this.deleteShoe} className="shoe-button remove">REMOVE</div>
                     </form>
             </Modal>
         )
     }
 }
 export default Shoe;
+
+const customStyles = {
+    content : {
+        fontSize: '4vh',
+        fontFamily: 'BebasNeue',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        width: '70%',
+        height: '70%',
+      }
+  };
