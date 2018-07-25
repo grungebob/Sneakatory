@@ -113,6 +113,22 @@ table#table1 {
   text-align: center;
 }
 
+.shoe-button {
+  padding:15px 16px 15px 16px;
+  margin:0;
+  text-align: center;
+  border-radius:5px;
+  border:none;
+  font-size: 4vh;
+  font-family:BebasNeue;
+  letter-spacing:2px;
+  height:30px;
+  width: 75px;
+  color: #ffffff;
+  background-color:#509e2f;
+  padding:10px 15px
+ }
+
 
 /* ==== The Modal: =====
 Background */

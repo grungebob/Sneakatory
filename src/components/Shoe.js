@@ -10,8 +10,7 @@ const customStyles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
         width: '60%',
-        height: '80%',
-        alignContent: 'center',
+        height: '60%',
       }
   };
 
@@ -114,8 +113,8 @@ class Shoe extends React.Component {
                         UPC: { this.state.shoe.UPC } <br />
                         Image Link: { this.state.shoe.imgLink } 
                     </div>
-                    <button onClick={this.edit}> EDIT </button>
-                    <button onClick={this.deleteShoe}> REMOVE </button>
+                    <div onClick={this.edit} className="shoe-button" >EDIT</div>
+                    <div onClick={this.deleteShoe} className="shoe-button" >REMOVE</div>
                 </Modal>
             :
             <Modal
@@ -132,8 +131,8 @@ class Shoe extends React.Component {
                         <input type="text" name="size" placeholder="Size (7, 10, you get it)" />
                         <input type="text" name="UPC" placeholder="UPC #" />
                         <input type="text" name="image" placeholder="Image Link (e.g. https://stockx.imgix.net/shoe-name.png)" /> <br />
-                        <input type="submit" value="Submit" />
-                        <button onClick={this.deleteShoe}> REMOVE SHOE </button>
+                        <input type="submit" value="Submit" className="shoe-button" />
+                        <div onClick={this.deleteShoe} className="shoe-button">REMOVE</div>
                     </form>
             </Modal>
         )
