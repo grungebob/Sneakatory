@@ -3,13 +3,15 @@ import Modal from 'react-modal';
 
 const customStyles = {
     content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
-    }
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)',
+        width: '85%',
+        height: '85%',
+      }
   };
 
 class Shoe extends React.Component {
@@ -18,55 +20,39 @@ class Shoe extends React.Component {
         this.state = {
             shoe: props.shoe,
             showModal: false,
+            dude: false,
         };
 
-        this.handleClick = this.handleClick.bind(this);
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
-      }
+        this.closeModal = this.closeModal.bind(this);
+        this.openModal = this.openModal.bind(this);
+      };
 
-      handleClick(e) {
-        console.log('Shoe Info: \n', this.state);
-        // Get the modal
-        var modal = document.getElementById('myModal');
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        }
-      }
 
       handleOpenModal () {
         this.setState({ showModal: true });
       }
       
       handleCloseModal () {
-        console.log('close')
+        console.log('close');
         this.setState({ showModal: false });
+        console.log('handle cm', this.state.showModal)
+      }
+
+      openModal() {
+        this.setState({dude: true});
+      }
+     
+      async closeModal() {
+        await this.setState({ dude: false});
+        console.log('close modal', this.state.dude)
       }
   
 
       render() {
         return (
-            <td className = "container" onClick={this.handleOpenModal} id="myBtn">
+            <td className = "container" onClick={this.openModal} id="myBtn">
                 <img src={this.state.shoe.imgLink} alt="Shoe" className="shoe"/>
                 <div className = "overlay">
                     <div className = "shoe-info">
@@ -79,14 +65,12 @@ class Shoe extends React.Component {
                 </div>
 
                 <Modal
-                    isOpen={this.state.showModal}
+                    isOpen={this.state.dude}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                     style={customStyles}
-                    contentLabel="Example Modal"
                 >
-                    <div className="modal-content">
-                        <span className="close">&times;</span>
+                        <span className="close" onClick={this.closeModal}>&times;</span>
                         <div>
                             ID: { this.state.shoe.id } <br />  
                             Brand: { this.state.shoe.brand } <br />
@@ -94,8 +78,7 @@ class Shoe extends React.Component {
                             Size: { this.state.shoe.size } <br />
                             UPC: { this.state.shoe.UPC } <br />
                         </div>
-                        <button onClick={this.handleCloseModal}>Close Modal</button>
-                    </div>
+                    <button onClick={this.closeModal}>Close Modal</button>
                 </Modal>
             </td>
         )
