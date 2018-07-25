@@ -233,7 +233,7 @@ data.shelf1 = [
             shoes: 
             [
                 {
-                id: 16,
+                id: 31,
                 brand: 'Nike',
                 style: "AQ7476-016",
                 size: 10,
@@ -241,7 +241,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Think-16-Pass-The-Torch-Product.jpg'
                 },
                 { 
-                id: 17,
+                id: 32,
                 brand: 'Nike',
                 style: "878458-023",
                 size: 7,
@@ -249,7 +249,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Nike-Court-Flare-AJ1-Serena-Williams-Bred-W.png'
                 },
                 {
-                id: 18,
+                id: 33,
                 brand: 'Nike',
                 style: "BB5512",
                 size: 9,
@@ -257,7 +257,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Adidas-Ultra-Boost-X-Stella-McCartney-Black-White-W.png'
                 },
                 {
-                id: 19,
+                id: 34,
                 brand: 'Converse',
                 style: "150207C",
                 size: 7,
@@ -265,7 +265,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Converse-Chuck-Taylor-All-Star-70s-Ox-Comme-des-Garcons-PLAY-White.png'
                 },
                 {
-                id: 20,
+                id: 35,
                 brand: 'Adidas',
                 style: "AC7034",
                 size: 8,
@@ -277,7 +277,7 @@ data.shelf1 = [
             row: 4,
             shoes: [
                 {
-                id: 21,
+                id: 36,
                 brand: 'New Balance',
                 style: "MS574TH",
                 size: 13,
@@ -285,16 +285,15 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/New-Balance-574-Sport-Ronnie-Fieg-X-DSM-Navy.png'
                 },
                 { 
-                id: 22,
+                id: 37,
                 brand: 'Nike',
                 style: "BV0833-016",
                 size: 12,
                 UPC: 267383,
                 imgLink: 'https://stockx.imgix.net/Nike-Cortez-Kenny-3-Kendrick-Lamar-TDE-The-Championship-Product.jpg'
                 },
-                'Empty Slot',
                 {
-                id: 24,
+                id: 38,
                 brand: 'adidas',
                 style: "150207C",
                 size: 12,
@@ -302,7 +301,15 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Adidas-JS-Wings-Asap-Rocky-Black-Flag.jpg'
                 },
                 {
-                id: 25,
+                id: 39,
+                brand: 'adidas',
+                style: "150207C",
+                size: 12,
+                UPC: 463663,
+                imgLink: 'https://stockx.imgix.net/Adidas-JS-Wings-Asap-Rocky-Black-Flag.jpg'
+                },
+                {
+                id: 40,
                 brand: 'Nike',
                 style: "804076-090",
                 size: 13,
@@ -313,9 +320,16 @@ data.shelf1 = [
         { 
             row: 3,
             shoes: [
-                'Empty Slot',
                 { 
-                id: 11,
+                id: 63,
+                brand: 'Converse',
+                style: '162204C-102',
+                size: 11,
+                UPC: 372345,
+                imgLink: 'https://stockx.imgix.net/Converse-Chuck-Taylor-All-Star-Hi-Off-White-Product.jpg'
+                },
+                { 
+                id: 41,
                 brand: 'Converse',
                 style: '162204C-102',
                 size: 11,
@@ -323,7 +337,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Converse-Chuck-Taylor-All-Star-Hi-Off-White-Product.jpg'
                 },
                 {
-                id: 10,
+                id: 42,
                 brand: 'Asics',
                 style: "D51GK-1290",
                 size: 12,
@@ -331,7 +345,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Asics-Onitsuka-Tiger-Colorado-85-Bait-Bruce-Lee.png'
                 },
                 {
-                id: 7,
+                id: 43,
                 brand: 'Nike',
                 style: "Vapor AJ3",
                 size: 11,
@@ -339,7 +353,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Nike-Air-Max-1-97-Sean-Wotherspoon-NA-Product.jpg'
                 },
                 {
-                id: 6,
+                id: 44,
                 brand: 'Nike',
                 style: '308497-162',
                 size: 11.5,
@@ -353,7 +367,7 @@ data.shelf1 = [
             shoes: 
             [
                 {
-                id: 4,
+                id: 60,
                 brand: 'Nike',
                 style: "AA3834-101",
                 size: 12,
@@ -361,7 +375,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg'
                 },
                 { 
-                id: 2,
+                id: 45,
                 brand: 'Adidas',
                 style: "BB5350",
                 size: 12,
@@ -369,7 +383,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Adidas-Yeezy-Boost-350-Low-Pirate-Black-2016-Product.jpg'
                 },
                 {
-                id: 8,
+                id: 46,
                 brand: 'Nike',
                 style: "AQ0818-148",
                 size: 11,
@@ -377,7 +391,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Air-Jordan-1-Retro-High-Off-White-University-Blue-Product.jpg'
                 },
                 {
-                id: 9,
+                id: 47,
                 brand: 'Nike',
                 style: "AO8759-077",
                 size: 11,
@@ -385,7 +399,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/NikeCourt-Vapor-RF-Air-Max-95-Greedy.png'
                 },
                 {
-                id: 3,
+                id: 48,
                 brand: 'Nike',
                 style: "417098-401",
                 size: 11.5,
@@ -398,7 +412,7 @@ data.shelf1 = [
             shoes: 
             [
                 {
-                id: 5,
+                id: 49,
                 brand: 'Nike',
                 style: "AJ4585-100",
                 size: 10,
@@ -406,7 +420,7 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Nike-Air-Max-97-Off-White.png'
                 },
                 { 
-                id: 12,
+                id: 50,
                 brand: 'Nike',
                 style: "AT3057-100",
                 size: 12,
@@ -414,16 +428,23 @@ data.shelf1 = [
                 imgLink: 'https://stockx.imgix.net/Nike-Air-Max-1-Parra-2018-Product.jpg'
                 },
                 {
-                id: 13,
+                id: 51,
                 brand: 'Nike',
                 style: "709998-031",
                 size: 12,
                 UPC: 372683,
                 imgLink: 'https://stockx.imgix.net/Nike-Zoom-Vapor-AJ3-Atmos-Jade.png'
                 },
-                'Empty Slot',
                 {
-                id: 15,
+                id: 61,
+                brand: 'Nike',
+                style: "908366-001",
+                size: 11.5,
+                UPC: 3826655,
+                imgLink: 'https://stockx.imgix.net/Nike-Air-Max-1-Atmos-2017.png'
+                },
+                {
+                id: 52,
                 brand: 'Nike',
                 style: "908366-001",
                 size: 11.5,
