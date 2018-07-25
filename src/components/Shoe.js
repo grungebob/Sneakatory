@@ -89,6 +89,7 @@ class Shoe extends React.Component {
                 >
                     <span className="close" onClick={this.closeModal}>&times;</span>
                     <div className = "modal-content">
+                        <img alt="Shoe" src = { this.state.shoe.imgLink } style={{maxWidth: "300px"}}/> <br />
                         Brand: { this.state.shoe.brand } <br />
                         Style: { this.state.shoe.style } <br />
                         Size: { this.state.shoe.size } <br />
