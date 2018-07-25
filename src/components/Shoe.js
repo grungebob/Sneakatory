@@ -9,8 +9,9 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        width: '30%',
-        height: '40%',
+        width: '60%',
+        height: '80%',
+        alignContent: 'center',
       }
   };
 
@@ -26,6 +27,9 @@ class Shoe extends React.Component {
         this.openModal = this.openModal.bind(this);
         this.edit = this.editShoe.bind(this);
         this.deleteShoe = this.deleteShoe.bind(this);
+        this.updateShoe = this.updateShoe.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
       };
 
       openModal() {
@@ -33,12 +37,18 @@ class Shoe extends React.Component {
       }
      
       closeModal() {
-        this.setState({ showModal: false});
+        this.setState({ 
+            showModal: false,
+            isEditing: false
+        });
       }
       
-      editShoe() {
-          this.setState({ editModal: true });
-          console.log(this.state.editModal);
+      async editShoe() {
+          await this.setState({
+              showModal: true, 
+              isEditing: true 
+            });
+          console.log('is editing?', this.state.isEditing);
       }
 
       deleteShoe(){
@@ -47,6 +57,26 @@ class Shoe extends React.Component {
               shoe: 'Empty Slot'
           });
           this.closeModal();
+      }
+
+      handleChange(event) {
+        this.setState({value: event.target.value});
+      }
+    
+      handleSubmit(event) {
+        event.preventDefault();
+      }
+
+      updateShoe(newBrand, newStyle, newSize, newUPC, newImgLink) {
+          this.setState({
+              shoe: {
+                  brand: newBrand,
+                  style: newStyle,
+                  size: newSize,
+                  UPC: newUPC,
+                  imgLink: newImgLink
+              }
+          })
       }
 
       render() {
@@ -66,25 +96,45 @@ class Shoe extends React.Component {
                         </div>     
                     </td>
                 :
-                <td onClick ={this.edit}> Open Slot </td>
+                <td onClick ={this.edit} > Open Slot </td>
+            :
+            !this.state.isEditing ?
+                <Modal
+                isOpen={this.state.showModal}
+                onRequestClose={this.closeModal}
+                style={customStyles}
+                ariaHideApp={false}
+                >
+                    <span className="close" onClick={this.closeModal}>&times;</span>
+                    <div className = "modal-content">
+                        ID: { this.state.shoe.id } <br />  
+                        Brand: { this.state.shoe.brand } <br />
+                        Style: { this.state.shoe.style } <br />
+                        Size: { this.state.shoe.size } <br />
+                        UPC: { this.state.shoe.UPC } <br />
+                        Image Link: { this.state.shoe.imgLink } 
+                    </div>
+                    <button onClick={this.edit}> EDIT </button>
+                    <button onClick={this.deleteShoe}> REMOVE </button>
+                </Modal>
             :
             <Modal
-            isOpen={this.state.showModal}
-            onRequestClose={this.closeModal}
-            style={customStyles}
-            ariaHideApp={false}
-            >
-                <span className="close" onClick={this.closeModal}>&times;</span>
-                <div className = "modal-content">
-                    ID: { this.state.shoe.id } <br />  
-                    Brand: { this.state.shoe.brand } <br />
-                    Style: { this.state.shoe.style } <br />
-                    Size: { this.state.shoe.size } <br />
-                    UPC: { this.state.shoe.UPC } <br />
-                    Image: { this.state.shoe.imgLink } 
-                </div>
-                <button onClick={this.edit}> EDIT </button>
-                <button onClick={this.deleteShoe}> REMOVE </button>
+                isOpen={this.state.showModal}
+                onRequestClose={this.closeModal}
+                style={customStyles}
+                ariaHideApp={false}
+                align-content="center"
+                >
+                    <span className="close" onClick={this.closeModal}>&times;</span>
+                    <form className = "modal-edit" onSubmit = {this.updateShoe}>
+                        <input type="text" name="brand" placeholder="Brand (e.g. adidas, Nike, etc.)" />
+                        <input type="text" name="style" placeholder="Style (e.g. AR5131-610)" />
+                        <input type="text" name="size" placeholder="Size (7, 10, you get it)" />
+                        <input type="text" name="UPC" placeholder="UPC #" />
+                        <input type="text" name="image" placeholder="Image Link (e.g. https://stockx.imgix.net/shoe-name.png)" /> <br />
+                        <input type="submit" value="Submit" />
+                        <button onClick={this.deleteShoe}> REMOVE SHOE </button>
+                    </form>
             </Modal>
         )
     }
