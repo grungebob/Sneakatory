@@ -294,11 +294,11 @@ data.shelf1 = [
                 },
                 {
                 id: 38,
-                brand: 'adidas',
-                style: "150207C",
-                size: 12,
-                UPC: 463663,
-                imgLink: 'https://stockx.imgix.net/Adidas-JS-Wings-Asap-Rocky-Black-Flag.jpg'
+                brand: 'Converse',
+                style: "162287C",
+                size: 11,
+                UPC: 38273648,
+                imgLink: 'https://stockx.imgix.net/Converse-Chuck-Taylor-All-Star-70s-Hi-Toy-JW-Anderson-Green.png'
                 },
                 {
                 id: 39,
@@ -322,11 +322,11 @@ data.shelf1 = [
             shoes: [
                 { 
                 id: 63,
-                brand: 'Converse',
-                style: '162204C-102',
-                size: 11,
-                UPC: 372345,
-                imgLink: 'https://stockx.imgix.net/Converse-Chuck-Taylor-All-Star-Hi-Off-White-Product.jpg'
+                brand: 'adidas',
+                style: 'AQ0026',
+                size: 10,
+                UPC: 37382628,
+                imgLink: 'https://stockx.imgix.net/adidas-Harden-Vol-2-USA.png'
                 },
                 { 
                 id: 41,
@@ -445,11 +445,11 @@ data.shelf1 = [
                 },
                 {
                 id: 52,
-                brand: 'Nike',
-                style: "908366-001",
-                size: 11.5,
-                UPC: 3826655,
-                imgLink: 'https://stockx.imgix.net/Nike-Air-Max-1-Atmos-2017.png'
+                brand: 'Air Jordan',
+                style: "136046-041",
+                size: 9,
+                UPC: 33829638,
+                imgLink: 'https://stockx.imgix.net/Air-Jordan-11-Retro-Space-Jam-2000.jpg'
                 },
             ]}
         ];
