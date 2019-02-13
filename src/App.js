@@ -34,6 +34,11 @@ class App extends Component {
           <li className={this.state.view === 'shelf2' ? 'active' : 'inactive'} onClick={() => this.changeView('shelf2')}> Shelf 2 </li> 
         </ul>
         <Shelf shelf={this.state.data[this.state.view]} handleClick={this.handleClick}/>
+        <p >
+          Created by Robert Chung 
+          <br/> Contact: <a href="mailto:chungrob@gmail.com">chungrob@gmail.com </a> 
+          <br/> <a href="https://github.com/grungebob/Sneakatory">GitHub Code</a>
+        </p>
       </div>
     );
   };
