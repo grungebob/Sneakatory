@@ -93,7 +93,7 @@ class Shoe extends React.Component {
                         Style: { this.state.shoe.style } <br />
                         Size: { this.state.shoe.size } <br />
                         UPC: { this.state.shoe.UPC } <br />
-                        Image Link: { this.state.shoe.imgLink } 
+                        Image Link: <a href={`{this.state.shoe.imgLink}`}> {this.state.shoe.imgLink} </a>
                     </div>
                     <div onClick={this.edit} className="shoe-button" >EDIT</div>
                     <div onClick={this.deleteShoe} className="shoe-button remove" >REMOVE</div>
